@@ -1,9 +1,7 @@
-// lib/product_scroller.dart
-
 import 'package:flutter/material.dart';
 import 'package:productmart/controller/productController.dart';
 import 'package:productmart/model/productModel.dart';
-import 'package:productmart/utils/productCard.dart'; // Make sure to create this widget
+import 'package:productmart/utils/productCard.dart';
 
 class ProductScroller extends StatefulWidget {
   final int startKm;
@@ -28,11 +26,10 @@ class _ProductScrollerState extends State<ProductScroller> {
 
   Future<void> _loadMoreProducts() async {
     if (_isLoading) return;
-    setState(() => _isLoading = true);
+    // setState(() => _isLoading = true);
 
     try {
-      final apiService = ApiService();
-      final newProducts = await apiService.fetchProducts(_currentPage);
+      final newProducts = await fetchProducts(_currentPage, widget.startKm, widget.endKm);
       setState(() {
         _currentPage++;
         _products.addAll(newProducts);

@@ -1,19 +1,28 @@
-// lib/model/productModel.dart
-
 class Product {
   final int id;
   final String name;
-  final String imageUrl;
   final String description;
+  final String image;
+  final int price;
+  final int stock;
 
-  Product({required this.id, required this.name, required this.imageUrl, required this.description});
+  Product({
+    required this.id,
+    required this.name,
+    required this.description,
+    required this.image,
+    required this.price,
+    required this.stock,
+  });
 
   factory Product.fromJson(Map<String, dynamic> json) {
     return Product(
       id: json['id'],
       name: json['name'],
-      imageUrl: json['imageUrl'], 
-      description: json['description'] ?? '', 
+      description: json['description'],
+      image: json['image'],
+      price: json['price'],
+      stock: json['stock'],
     );
   }
 }
