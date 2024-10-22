@@ -1,10 +1,8 @@
 // lib/product_scroller.dart
 
 import 'package:flutter/material.dart';
-import 'package:productmart/api_service.dart';
 import 'package:productmart/controller/productController.dart';
 import 'package:productmart/model/productModel.dart';
-import 'package:productmart/product_card.dart';
 import 'package:productmart/utils/productCard.dart'; // Make sure to create this widget
 
 class ProductScroller extends StatefulWidget {
